@@ -53,6 +53,18 @@ namespace WebApplicationcurddemo.Controllers
             return Ok(_oStudents);
         }
 
+        [HttpPut]
+        public IActionResult Update(int id, Students oStudent)
+        {
+            _oStudents.Add(oStudent);
+            if (_oStudents.Count == 0)
+            {
+                return NotFound("No student found.");
+            }
+            return Ok(_oStudents);
+        }
+
+
         [HttpDelete]
         public IActionResult DeleteStudent(int id)
         {
